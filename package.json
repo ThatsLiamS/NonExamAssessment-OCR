@@ -1,0 +1,22 @@
+{
+	"name": "ocr-extended-project",
+	"version": "0.1.0",
+	"description": "A program designed and developed as a section of the OCR Computer Science specification, written in [NodeJS](https://nodejs.org/en/)!",
+	"main": "src/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ThatsLiamS/OCR-extended-project.git"
+	},
+	"author": "Liam Skinner",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ThatsLiamS/OCR-extended-project/issues"
+	},
+	"homepage": "https://github.com/ThatsLiamS/OCR-extended-project#readme",
+	"devDependencies": {
+		"eslint": "^8.12.0"
+	}
+}
