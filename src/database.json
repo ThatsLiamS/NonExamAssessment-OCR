@@ -1,0 +1,29 @@
+{
+
+	"player": {
+		"id": "",
+		"name": "",
+		"dob": "",
+		
+		"email": "",
+		"password": "",
+
+		"games_played": 0,
+		"games_won": 0
+	},
+
+	"game": {
+		"id": "",
+		"date": "",
+
+		"player_one": {
+			"id": "",
+			"score": 0
+		},
+		"player_two": {
+			"id": "",
+			"score": 0
+		}
+	}
+
+}
