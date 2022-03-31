@@ -6,29 +6,29 @@ const regex = {
 	alphanumeric: /^[a-zA-Z0-9]$/
 };
 
-module.exports = ({ type, text }) => {
+module.exports = ({ type, text: value }) => {
 
 	/* Does text meet the expression */
 	const expression = regex[type.name];
-	if (!text.test(expression)) return false;
+	if (!value.test(expression)) return false;
 
 	/* Extra validation conditions */
 	switch (type.name) {
 
 	case "email":
-		if (typeof text !== String || text.length < 5 || text.length > 50) return false;
+		if (typeof value !== String || value.length < type.minLength || value.length > type.maxLength) return false;
 		break;
 
 	case "string":
-		if (typeof text !== String || text.length < 5 || text.length > 25) return false;
+		if (typeof value !== String || value.length < type.minLength || value.length > type.maxLength) return false;
 		break;
 
 	case "number":
-		if (Number(text) == 'NaN') return false;
+		if (Number(value) == 'NaN') return false;
 		break;
 
 	case "alphanumeric":
-		if (typeof text !== String || text.length < 5 || text.length > 2) return false;
+		if (typeof value !== String || value.length < type.minLength || value.length > type.maxLength) return false;
 		break;
 
 	}
