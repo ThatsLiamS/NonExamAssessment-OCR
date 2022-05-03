@@ -1,8 +1,4 @@
-# OCR Extended Project
-
-A program designed and developed as a section of the OCR Computer Science specification, written in [NodeJS](https://nodejs.org/en/)!
-
-## Project Information
+# OCR Non-Exam Assessment 
 
 Katarina is developing a two-player dice game. The players roll two 6-sided dice each and get points depending on what they roll. There are 5 rounds in a game.  In each round, each player rolls the two dice. 
 
@@ -28,3 +24,32 @@ Only authorised players can play the game.  Where appropriate, input from the us
 6. Outputs who has won at the end of the 5 rounds.
 7. Stores the winner’s score, and their name, in an external file.
 8. Displays the score and player name of the top 5 winning scores from the external file.
+
+## Contributing
+
+Contributions are always welcome! A massive benefit of
+being an open-source project is the whole community can come together
+to contribute and help us improve.
+
+See `contributing.md` for ways to get started.
+Please adhere to this project's `code of conduct`.
+
+## Acknowledgements
+
+ - [Google Firestore Database](https://firebase.google.com/)
+ - [NodeJS v17.8.0](https://nodejs.org/en/)
+ - [Inquirer v8.2.2](https://github.com/SBoudrias/Inquirer.js)
+ - [ESLint v8.12.0](https://eslint.org/)
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your `.env` file.  A copy of this can be found in `example.env`
+
+```.env
+# <https://console.firebase.google.com/u/0/>
+Database = {Object}
+```
+## Authors
+
+key contributors:
+- [@ThatsLiamS](https://github.com/ThatsLiamS)
