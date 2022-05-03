@@ -62,10 +62,6 @@ const signUp = async (firestore) => {
 		.then(async (answers) => {
 
 			/* validate user input, returns boolean */
-			const name = validate({ value: answers['name'], type: { name: 'string', minLength: 5, maxLength: 25 } });
-			const DoB = true;
-			// validate({ value: answers['date of borth'], type: { name: 'date' } });
-
 			const email = validate({ value: answers['email'], type: { name: 'email', minLength: 5, maxLength: 50 } });
 			if (!email) {
 				console.log('Invalid email provided. Try again!');
@@ -88,7 +84,7 @@ const signUp = async (firestore) => {
 			userData.email = answers['email'];
 			userData.password = answers['password'];
 
-			await firestore.doc(`/guilds/${userData.id}/`).set(userData);
+			await firestore.doc(`/players/${userData.id}/`).set(userData);
 
 			/* Return userData */
 			return userData;
