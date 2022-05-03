@@ -77,15 +77,20 @@ const menu = async () => {
 
 
 	/* Play 5 rounds */
-	for(let x = 0; x < 5; x++) {
-		rounds(x, [player_one, player_two]);
-	}
+	setTimeout(() => rounds(1, [player_one, player_two]), 2500);
+	setTimeout(() => rounds(2, [player_one, player_two]), 5000);
+	setTimeout(() => rounds(3, [player_one, player_two]), 7500);
+	setTimeout(() => rounds(4, [player_one, player_two]), 10_000);
+	setTimeout(() => rounds(5, [player_one, player_two]), 12_500);
 
-	/* If it is a draw */
-	if (player_one.score == player_two.score) await shootOut(player_one, player_two);
+	setTimeout(async () => {
 
+		/* If it is a draw */
+		if (player_one.score == player_two.score) await shootOut(player_one, player_two);
 
-	await displayWinner(player_one, player_two);
-	await saveData(player_one, player_two);
+		/* Game over, who won? */
+		displayWinner(player_one, player_two);
+		await saveData(player_one, player_two, firestore);
+	}, 15_000);
 
 })();
