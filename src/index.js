@@ -4,9 +4,9 @@ const inquirer = require('inquirer');
 const firebase = require('firebase-admin');
 
 /* Import required files */
-const { logIn, signUp } = require('./util/logIn.js');
-const { rounds, shootOut } = require('./util/play.js');
-const { displayWinner, saveData } = require('./util/winner.js');
+const { logIn, signUp } = require('./logIn.js');
+const { rounds, shootOut } = require('./play.js');
+const { displayWinner, saveData } = require('./winner.js');
 
 /* Establish connection to the database */
 firebase.initializeApp({

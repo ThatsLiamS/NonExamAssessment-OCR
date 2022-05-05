@@ -1,7 +1,7 @@
 /* Import packages and files */
 const inquirer = require('inquirer');
-const validate = require('./validate.js');
-const defaultData = require('./../database.json');
+const validate = require('./util/validate.js');
+const defaultData = require('./util/database.json');
 
 
 /* Allows the user to log in and return user object */
