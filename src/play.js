@@ -22,8 +22,8 @@ const rounds = (round, players) => {
 	}
 };
 
-/* If it is a draw */
-const shootOut = (pone, ptwo) => {
+/* If it is a draw, shoot out */
+const shootout_rollDice = async (pone, ptwo) => {
 
 	let [one, two] = [0, 0];
 	while (one == two) {
@@ -34,11 +34,21 @@ const shootOut = (pone, ptwo) => {
 	pone.score = Number(pone.score) + one;
 	ptwo.score = Number(ptwo.score) + two;
 
-	console.log(`\n_The Showdown!_\n\n${pone.name} rolled a ${one}\n${ptwo.name} rolled a ${two}`);
+	return [one, two];
 };
 
+const shootout_manager = async (pone, ptwo) => {
+
+	const [one, two] = await shootout_rollDice(pone, ptwo);
+	console.log(`\n_The Showdown!_\n\n${pone.name} rolled a ${one}\n${ptwo.name} rolled a ${two}`);
+
+	return true;
+};
+
+
 module.exports = {
+	shootOut: shootout_manager,
+	shootout_rollDice,
 	rounds,
-	shootOut,
 	roll
 };

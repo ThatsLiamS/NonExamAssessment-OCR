@@ -1,8 +1,8 @@
 /* contains the regular expressions for data types */
 const regex = {
 	email: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-._]+)$/,
-	string: /^[a-zA-Z-_]$/,
-	number: /^[0-9]$/,
+	string: /^[a-zA-Z_-](?:[a-zA-Z_-]*[a-zA-Z_-])$/,
+	number: /^\d+$/,
 	password: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/
 };
 
