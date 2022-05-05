@@ -38,5 +38,6 @@ const saveData = async (pone, ptwo, firestore) => {
 
 module.exports = {
 	displayWinner,
-	saveData
+	saveData,
+	generator
 };

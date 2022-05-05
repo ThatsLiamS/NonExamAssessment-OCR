@@ -39,5 +39,6 @@ const shootOut = (pone, ptwo) => {
 
 module.exports = {
 	rounds,
-	shootOut
+	shootOut,
+	roll
 };

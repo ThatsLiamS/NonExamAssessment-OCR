@@ -6,7 +6,7 @@ const regex = {
 	password: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/
 };
 
-module.exports = ({ type, value }) => {
+const validate = ({ type, value }) => {
 
 	/* Does text meet the expression */
 	const expression = regex[type.name];
@@ -34,4 +34,9 @@ module.exports = ({ type, value }) => {
 	}
 
 	return true;
+};
+
+module.exports = {
+	validate,
+	regex
 };
