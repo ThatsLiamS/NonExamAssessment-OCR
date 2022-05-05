@@ -1,6 +1,7 @@
 {
 	"recommendations": [
 		"dbaeumer.vscode-eslint",
-		"2gua.rainbow-brackets"
+		"2gua.rainbow-brackets",
+		"maty.vscode-mocha-sidebar"
 	]
 }
