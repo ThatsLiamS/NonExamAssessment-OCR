@@ -4,7 +4,7 @@
 	"description": "A program designed and developed as a section of the OCR Computer Science specification, written in [NodeJS](https://nodejs.org/en/)!",
 	"main": "src/index.js",
 	"scripts": {
-		"test": "mocha"
+		"test": "mocha --timeout 0"
 	},
 	"repository": {
 		"type": "git",
