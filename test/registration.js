@@ -9,6 +9,7 @@ firebase.initializeApp({
 const firestore = firebase.firestore();
 
 const { log_in, sign_up } = require('./../src/logIn.js');
+const hash = require('./../src/util/hash.js');
 
 describe('Registration', () => {
 
@@ -77,6 +78,21 @@ describe('Registration', () => {
 				name: 'Test Account'
 			}, firestore),
 			'object'
+		));
+
+	});
+
+
+	describe('Salted Hash', () => {
+
+		it('Should return 32: hash string length', async () => assert.equal(
+			hash('TH1S_P@SSW0RD_IS_F@LSE').length,
+			32
+		));
+
+		it('Should return type String: hash function return', async () => assert.equal(
+			typeof hash('Test_2020'),
+			'string'
 		));
 
 	});
