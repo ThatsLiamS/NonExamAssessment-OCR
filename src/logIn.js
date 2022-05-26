@@ -1,6 +1,7 @@
 /* Import packages and files */
 const inquirer = require('inquirer');
 const { validate } = require('./util/validate.js');
+const hash = require('./util/hash.js');
 const defaultData = require('./util/database.json');
 
 
@@ -18,13 +19,14 @@ const log_in = async (answers, firestore) => {
 	if (email == false || password == false) {
 		return false;
 	}
+	const hashedPassword = hash(answers['password']);
 
 	/* Does the user account exist */
 	let found = false;
 	const players = await firestore.collection('players').get();
 	players.forEach(async doc => {
 		/* If the login data matches, return user object */
-		if (doc.data().email == answers['email'] && doc.data().password == answers['password']) found = doc.data();
+		if (doc.data().email == answers['email'] && doc.data().password == hashedPassword) found = doc.data();
 	});
 
 	/* returns userData or boolean*/
@@ -72,7 +74,7 @@ const sign_up = async (answers, firestore) => {
 	userData.dob = answers['date of birth'];
 
 	userData.email = answers['email'];
-	userData.password = answers['password'];
+	userData.password = hash(answers['password']);
 
 	await firestore.doc(`/players/${userData.id}/`).set(userData);
 
