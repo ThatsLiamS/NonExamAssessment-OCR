@@ -21,7 +21,7 @@
 		"mocha": "^10.0.0"
 	},
 	"dependencies": {
-		"dotenv": "^16.0.0",
+		"dotenv": "^16.0.3",
 		"firebase-admin": "^11.4.1",
 		"inquirer": "^9.1.5"
 	}
