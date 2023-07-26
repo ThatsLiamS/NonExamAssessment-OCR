@@ -23,6 +23,6 @@
 	"dependencies": {
 		"dotenv": "^16.3.1",
 		"firebase-admin": "^11.10.1",
-		"inquirer": "^9.2.7"
+		"inquirer": "^9.2.8"
 	}
 }
